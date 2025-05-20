@@ -13,18 +13,18 @@ Om het voorbeeldproject te kunnen gebruiken moet je de volgende stappen uitvoere
 1. Start het project: Swagger wordt getoond. Hier zie je een aantal endpoints.
 1. Klik /Weatherforcast open
 1. Klik “Try it out” en vervolgens “Execute”
-1. Je ziet dat de server reageert met een 401 Unauthorized response. Dit komt omdat je geauthentiseerd moet zijn met de rol “Admin” om deze methode uit te voeren.
+1. Je ziet dat de server reageert met een 401 Unauthorized response. Dit komt omdat je geauthentiseerd moet zijn met een gebruiker die de rol “Admin” heeft om deze methode uit te voeren.
 
 ### Admin gebruiker aanmaken
 We gaan nu de eerste Admin gebruiker aanmaken in de database. Dit doen we als volgt:
 
-1. Comment out de regel ```[Authorize(Roles = UserRoles.Admin)]``` boven de RegisterAdmin methode in de AuthenticateController class
+1. Comment out de regel ```[Authorize(Roles = UserRoles.Admin)]``` boven de RegisterAdmin methode in de AuthenticateController class. Dit zorgt ervoor dat we deze methode nu even zonder authenticatie uit kunnen voeren.
 1. Start het project opnieuw op
 1. Klik /Authenticate/register-admin open
 1. Klik “Try it out”
 1. Vul een gebruikersnaam (“admin”), emailadres en (sterk!) wachtwoord in
-1. Klik op “Execute”. Krijg je een foutmelding, dan "User creation failed! Please check user details and try again", dan heb je waarschijnlijk een niet sterk genoeg wachtwoord. Pas dit dan aan.
-1. Haal het comment voor de regel [Authorize(Roles = UserRoles.Admin)] boven de RegisterAdmin methode in de AuthenticateController class weg, zodat niet zomaar iemand een admin-gebruiker aan kan maken, maar alleen een andere admin.
+1. Klik op “Execute”. Krijg je een foutmelding "User creation failed! Please check user details and try again", dan heb je waarschijnlijk een niet sterk genoeg wachtwoord. Pas dit dan aan.
+1. Haal het comment voor de regel [Authorize(Roles = UserRoles.Admin)] boven de RegisterAdmin methode in de AuthenticateController nu weer weg class weg, zodat niet zomaar iemand een admin-gebruiker aan kan maken, maar alleen een andere admin.
 
 ### Inloggen als admin
 We gaan nu inloggen op de applicatie met de aangemaakte “admin” gebruiker:
@@ -52,7 +52,7 @@ Wanneer je nu een endpoint aan wil roepen vanuit de frontend, dan is het belangr
 1. Maak een database-migration "Init" aan (Add-Migration) en voer deze door op de database (Update-Database)
 1. Controleer de ConnectionString ApplicationDbContextConnection in appsettings.json. Pas deze eventueel aan.
 1. Installeer de package Microsoft.AspNetCore.Authentication.JwtBearer, versie 8.0.15 (!)
-1. Kopieer de volgende bestanden uit het voorbeeldproject en pas de namespaces en usings in de bestanden aan naar de namespace van het project:
+1. Kopieer de volgende bestanden uit het voorbeeldproject naar jullie eigen project en pas de namespaces en usings in de bestanden aan naar de namespace van jullie project (tip: gebruik de Quick Action "Change namespace to match folder structure"):
    - Authentication\AuthResponse.cs
    - Authentication\LoginModel.cs
    - Authentication\RegisterModel.cs
@@ -75,3 +75,6 @@ Wanneer je nu een endpoint aan wil roepen vanuit de frontend, dan is het belangr
 1. Voer de stappen van "Admin gebruiker aanmaken" van het voorbeeldproject uit in je eigen project
 1. Voer de stappen van "Inloggen als admin" van het voorbeeldproject uit in je eigen project
 1. PROFIT! Je bent nu klaar om je project verder uit te breiden met extra functionaliteiten!
+
+
+> Mist er een stap in dit stappenplan? Laat het me gerust weten via e-mail, dan pas ik het an!
