@@ -64,7 +64,6 @@ namespace WebApiWithJSONWebToken.Controllers
             return Unauthorized();
         }
 
-        [Authorize(Roles = UserRoles.Admin)]
         [HttpPost]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)

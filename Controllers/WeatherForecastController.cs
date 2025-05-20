@@ -21,7 +21,6 @@ namespace WebApiWithJSONWebToken.Controllers
             _logger = logger;
         }
 
-        [Authorize(Roles = UserRoles.Admin)]
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
