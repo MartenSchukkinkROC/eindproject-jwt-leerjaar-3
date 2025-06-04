@@ -1,6 +1,6 @@
 ﻿# Stappenplan Web API met Identity en JWT
 Voordat je toevoegingen gaat doen aan je eigen project, is het goed om eerst 
-het voorbeelproject “WebApiWithJSONWebToken” aan de praat te krijgen en 
+het voorbeeldproject “WebApiWithJSONWebToken” aan de praat te krijgen en 
 te bekijken. Je zult straks deze stappen ook uitvoeren op je eigen project.
 
 ## Het voorbeeldproject 
