@@ -77,4 +77,4 @@ Wanneer je nu een endpoint aan wil roepen vanuit de frontend, dan is het belangr
 1. PROFIT! Je bent nu klaar om je project verder uit te breiden met extra functionaliteiten!
 
 
-> Mist er een stap in dit stappenplan? Laat het me gerust weten via e-mail, dan pas ik het an!
+> Mist er een stap in dit stappenplan? Laat het me gerust weten via e-mail, dan pas ik het aan!
