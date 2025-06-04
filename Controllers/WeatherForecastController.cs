@@ -25,7 +25,20 @@ namespace WebApiWithJSONWebToken.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            
+            int numberOfResults;
+
+            // Example that limits the number of results based on Admin role of user
+            if (User.IsInRole(UserRoles.Admin))
+            {
+                numberOfResults = 10;
+            }
+            else
+            {
+                numberOfResults = 1;
+            }
+
+            return Enumerable.Range(1, numberOfResults).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
